@@ -1,0 +1,62 @@
+/* ===== SECCIÓN PRINCIPAL DE PORTADA (HERO) ===== */
+#front-page {
+  /* Imagen de fondo para la sección hero */
+  background-image: url("/images/Doki-Doki-Literature-Club-Plus.png");
+  background-size: cover; /* Cubre todo el espacio disponible */
+  background-position: center center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que se repita la imagen */
+  background-attachment: fixed; /* Fondo fijo durante el scroll */
+  
+  height: 88dvh; /* 88% de la altura del viewport */
+
+  /* Diseño flexible para el contenido */
+  display: flex;
+  flex-direction: column;
+  padding-inline: 5%; /* Padding horizontal del 5% */
+  gap: 16px; /* Espacio entre elementos hijos */
+
+  /* ===== ELEMENTOS ASIDE DENTRO DE LA PORTADA ===== */
+  aside {
+    width: 100%;
+    height: 50%; /* Ocupa la mitad de la altura del contenedor */
+    display: flex;
+
+    /* Primer aside: alineación vertical centrada */
+    &:first-child {
+      align-items: center;
+    }
+
+    /* Segundo aside: alineado al final con padding inferior */
+    &:last-child {
+      height: 100%; /* Ocupa toda la altura disponible */
+      align-items: end; /* Alineado a la parte inferior */
+      justify-content: end; /* Alineado a la izquierda */
+      padding-bottom: 5%; /* Espaciado inferior */
+    }
+
+    /* Título principal */
+    h1 {
+      width: 300px; /* Ancho fijo para control de diseño */
+      font-weight: 300;
+      font-weight: bold; /* Texto en negrita - NOTA: hay dos font-weight, el último prevalece */
+      color: white; /* Color blanco para contraste con el fondo */
+      text-wrap: balance; /* Mejor balance de texto en múltiples líneas */
+    }
+
+    /* Subtítulo */
+    h2 {
+      width: 300px; /* Ancho fijo para control de diseño */
+      font-weight: 300;
+      font-weight: bold; /* Texto en negrita - NOTA: hay dos font-weight, el último prevalece */
+      color: white; /* Color blanco para contraste con el fondo */
+    }
+  }
+}
+
+/* ===== MEDIA QUERY PARA DISPOSITIVOS MÓVILES (≤500px) ===== */
+@media screen and (max-width: 500px) {
+  #front-page {
+    margin-top: 10dvh !important; /* Margen superior para evitar superposición con navbar */
+    background-size: 100% !important; /* Ajusta la imagen al ancho completo */
+  }
+}

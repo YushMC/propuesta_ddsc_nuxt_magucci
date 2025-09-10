@@ -1,0 +1,108 @@
+header#cabecera {
+  width: 100%;
+  height: 10dvh; /* Reducida la altura */
+  padding-inline: 2.5%;
+  display: flex;
+  justify-content: space-between; /* Centrado en lugar de espacio entre */
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0 auto; /* Centrar el header */
+  border-radius: 8px; /* Bordes redondeados opcionales */
+
+  label,
+  input {
+    display: none;
+  }
+}
+
+#Logo-container {
+  width: 40px;
+  height: 40px;
+  position: absolute; /* Posicionamiento absoluto para centrado */
+  left: 50%;
+  transform: translateX(-50%); /* Centrado preciso */
+}
+
+header#cabecera nav {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  display: flex;
+  justify-content: space-between; /* Distribuye espacio entre enlaces */
+  align-items: center;
+}
+
+header#cabecera ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  padding: 8px 16px;
+  margin: 0;
+  width: 100%;
+
+  li {
+    padding-top: 20px;
+    font-weight: bold;
+    padding: 16px;
+    transition: background-color 0.3s ease; /* Transición suave para hover */
+  }
+
+  li:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Efecto hover */
+  }
+}
+
+header#cabecera ul,
+header#cabecera ul li {
+  border-radius: 6px;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 800px) {
+  header#cabecera {
+    position: fixed !important;
+    z-index: 100;
+    backdrop-filter: blur(20px);
+    height: 8dvh; /* Altura reducida también en móviles */
+
+    h1 {
+      font-size: 1rem;
+    }
+
+    label {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  #Logo-container {
+    position: static;
+    transform: none;
+    left: auto;
+    margin: 0 auto;
+  }
+
+  header#cabecera nav {
+    position: absolute;
+    top: 8dvh; /* Ajustado a la nueva altura */
+    left: 0;
+    width: 70dvw;
+    z-index: 100;
+    border-top-right-radius: 30px;
+    overflow: hidden;
+    transition: all 0.3s linear;
+
+    ul {
+      width: 100%;
+      height: 92dvh; /* Ajustado a la nueva altura */
+      display: flex;
+      flex-direction: column;
+      padding: 5% 1%;
+      gap: 60px;
+    }
+  }
+}
